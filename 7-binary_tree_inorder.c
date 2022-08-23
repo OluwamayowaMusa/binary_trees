@@ -24,7 +24,7 @@ void subtree(const binary_tree_t *tree, void (*func)(int))
  * @func: Pointer to function to call for each node(Value)
  *
  */
-void binary_tree_inoder(const binary_tree_t *tree, void (*func)(int))
+void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
 	binary_tree_t *tmp = NULL;
 
