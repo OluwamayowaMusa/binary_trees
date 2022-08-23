@@ -2,8 +2,8 @@
 
 /**
  * binary_tree_node - Creates a binary tree node
- * parent: Pointer to the parent node
- * value: Value to be stored in node
+ * @parent: Pointer to the parent node
+ * @value: Value to be stored in node
  *
  * Return: A pointer to a new node
  *         NULL on failure
