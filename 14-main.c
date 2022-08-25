@@ -20,8 +20,8 @@ int main(void)
 	binary_tree_insert_left(root->left->left, 10);
 	binary_tree_insert_left(root->left->left->left, 8);
 	binary_tree_print(root);
-
 	balance = binary_tree_balance(root);
+
 	printf("Balance of %d: %+d\n", root->n, balance);
 	balance = binary_tree_balance(root->right);
 	printf("Balance of %d: %+d\n", root->right->n, balance);

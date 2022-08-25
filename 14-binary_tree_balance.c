@@ -13,7 +13,7 @@ void num_node(const binary_tree_t *tree, int *ptr)
 
 	if (tree == NULL)
 		return;
-	if (tree->left != NULL || tree->right != NULL)
+	if (tree != NULL)
 		(*ptr)++;
 	if (tree->left != NULL && tree->right != NULL)
 	{
@@ -24,9 +24,9 @@ void num_node(const binary_tree_t *tree, int *ptr)
 	else if (tree->left == NULL && tree->right != NULL)
 		num_node(tree->right, ptr);
 	else if (tree->left != NULL && tree->right == NULL)
-		num_node(tree->right, ptr);
+		num_node(tree->left, ptr);
 	if (tmp > *ptr)
-		*ptr = tmp;
+		*(ptr) = tmp;
 }
 
 /**
@@ -39,7 +39,7 @@ void num_node(const binary_tree_t *tree, int *ptr)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int height_left = -1, height_right = -1;
+	int height_left = 0, height_right = 0;
 
 	if (tree == NULL)
 		return (0);
