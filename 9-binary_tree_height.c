@@ -10,14 +10,22 @@
  */
 int num_node(const binary_tree_t *tree, size_t *ptr)
 {
+	size_t tmp = 0;
+
 	if (tree->left != NULL || tree->right != NULL)
 		(*ptr)++;
 	if (tree->left != NULL && tree->right != NULL)
+	{
+		tmp = *ptr;
 		num_node(tree->left, ptr);
+		num_node(tree->right, &tmp);
+	}
 	else if (tree->left == NULL && tree->right != NULL)
 		num_node(tree->right, ptr);
 	else if (tree->left != NULL && tree->right == NULL)
 		num_node(tree->left, ptr);
+	if (tmp > *ptr)
+		*(ptr) = tmp;
 	return (0);
 }
 
